@@ -44,3 +44,8 @@ Note that only the applications that have in the `.desktop` file data for the ch
 ~/.local/share/flaptak/app
 /var/lib/snapd/desktop/applications/
 ```
+## Build
+
+```
+valac src/Main.vala --pkg sqlite3
+```

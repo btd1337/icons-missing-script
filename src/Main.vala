@@ -51,7 +51,7 @@ public static bool create_table (Sqlite.Database db) {
 		CREATE TABLE icons (
 			id			INTEGER		PRIMARY KEY		NOT NULL,
 			app_name	TEXT						NOT NULL,
-			icon		TEXT					 	NOT NULL,
+			icon		TEXT		UNIQUE			NOT NULL,
 			icon_link	TEXT						NOT NULL
 		);
 	""";
@@ -84,6 +84,9 @@ public static bool create_record (Sqlite.Database db) {
 
 	int ec = db.exec (query, null, out errmsg);
 	if (ec != Sqlite.OK) {
+		if (errmsg.contains ("UNIQUE constraint failed")) {
+			errmsg = "This icon is already registered";
+		}
 		stderr.printf ("Error: %s!\n", errmsg);
 		return false;
 	}
