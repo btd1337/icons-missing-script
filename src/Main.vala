@@ -99,7 +99,7 @@ public static void get_all (Sqlite.Database db) {
 
 	Sqlite.Statement stmt;
 
-	const string prepared_query_str = "SELECT id, icon FROM icons";
+	const string prepared_query_str = "SELECT id, icon FROM icons ORDER BY id";
 	ec = db.prepare_v2 (prepared_query_str, prepared_query_str.length, out stmt);
 
 	if (ec != Sqlite.OK) {
