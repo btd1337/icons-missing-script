@@ -1,0 +1,25 @@
+# Beaver build file
+# Is just JSON, but lines beginning 
+# with '#' are ignored so you can add comments!
+{
+    # appInfo block is required
+    "appinfo": {
+        # required
+        "name": "Identify Missing Icons",
+        # required
+        "mainFile": "Main.vala",
+        # optional
+        "exeName": "imi",
+        # optional
+        "version": "0.0.1"
+    },
+    # list dependencies your project uses
+    # technically optional, but pretty much
+    # any Vala project needs gio.
+    # Make sure any library you use here is
+    # installed by your distro's package manager
+    # of choice
+    "dependencies": [
+        "sqlite3"
+    ]
+}

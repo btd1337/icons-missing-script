@@ -1,6 +1,11 @@
-public static int main (string[] args) {
-	int op = 0;
+public string language;
 
+public static int main (string[] args)
+{
+	int op = 0;
+	set_language (args);
+
+	stdout.printf ("L %s", language);
 	// Open a database:
 	Sqlite.Database db;
 	int ec = Sqlite.Database.open ("icons_missing.db", out db);
@@ -16,6 +21,7 @@ public static int main (string[] args) {
 2- Insert new record
 3- Show all values
 4- Get by icon value
+5- Make Request File
 0- Exit
 
 Op Code: """);
@@ -23,12 +29,13 @@ Op Code: """);
 		op = int.parse (stdin.read_line ());
 
 		switch (op) {
-			case 0: stdout.printf ("Exiting...\n"); break;
-			case 1: create_table (db); break;
-			case 2: create_record (db); break;
-			case 3: get_all (db); break;
-			case 4: get_by_icon_value (db); break;
-			default: stdout.printf ("Invalid option!"); break;
+		case 0: stdout.printf ("Exiting...\n"); break;
+		case 1: create_table (db); break;
+		case 2: create_record (db); break;
+		case 3: get_all (db); break;
+		case 4: get_by_icon_value (db); break;
+		case 5: make_request_file (db); break;
+		default: stdout.printf ("Invalid option!"); break;
 		}
 
 	} while (op != 0);
@@ -36,14 +43,21 @@ Op Code: """);
 	return 0;
 }
 
-public static string get_database_error_message (Sqlite.Database db) {
+public static void set_language (string[] args)
+{
+	language = args[1] != null ? args[1] : 'en';
+}
+
+public static string get_database_error_message (Sqlite.Database db)
+{
 	int code_error = db.errcode ();
 	string errmsg = db.errmsg ();
 
 	return @"$code_error: $errmsg";
 }
 
-public static bool create_table (Sqlite.Database db) {
+public static bool create_table (Sqlite.Database db)
+{
 	string errmsg;
 
 	// Create table
@@ -65,7 +79,8 @@ public static bool create_table (Sqlite.Database db) {
 	return true;
 }
 
-public static bool create_record (Sqlite.Database db) {
+public static bool create_record (Sqlite.Database db)
+{
 	// TODO Block duplicate entries when insert
 
 	string errmsg;
@@ -94,7 +109,8 @@ public static bool create_record (Sqlite.Database db) {
 	return true;
 }
 
-public static void get_all (Sqlite.Database db) {
+public static void get_all (Sqlite.Database db)
+{
 	int ec;
 
 	Sqlite.Statement stmt;
@@ -128,7 +144,8 @@ public static void get_all (Sqlite.Database db) {
 	stmt.reset ();
 }
 
-public static void get_by_icon_value (Sqlite.Database db) {
+public static void get_by_icon_value (Sqlite.Database db)
+{
 	int ec;
 	print ("Icon value: ");
 	string icon_link = stdin.read_line ();
@@ -153,4 +170,19 @@ public static void get_by_icon_value (Sqlite.Database db) {
 	print ("\n");
 	// Reset the statement to rebind parameters:
 	stmt.reset ();
+}
+
+public static void make_request_file (Sqlite.Database db)
+{
+	string[] places = [
+		"/usr/share/applications"
+		"$HOME/.local/share/applications"
+		"$HOME/.local/share/flaptak/app"
+		"/var/lib/snapd/desktop/applications/"
+	];
+	string suffix = ".desktop";
+	string dest_file = "my_request.txt";
+
+	print ("Type icon pack path: ");
+	string icon_pack = stdin.read_line ();
 }

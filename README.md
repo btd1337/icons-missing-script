@@ -10,6 +10,13 @@ cd icons-missing-script
 ./identify-missing-icons.sh
 ```
 
+To get some icons link that I added, use the program:
+
+```
+./Main
+```
+
+
 A **my_request** file is generated in this folder so you can create a request in the icon pack repository. You must edit this file and place the links to the application icons in line `[Icon Link]()`
 
 Example:
@@ -47,5 +54,5 @@ Note that only the applications that have in the `.desktop` file data for the ch
 ## Build
 
 ```
-valac src/Main.vala --pkg sqlite3
+valac src/main/vala/Main.vala --pkg sqlite3
 ```
