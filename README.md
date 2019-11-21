@@ -1,6 +1,12 @@
 # Identify Missing Icons
 
-This script check your installed applications and scans an icon pack folder for missing icons. With data found in the `.desktop` files that has the applications information of your system, it generates a my_request.txt file that contains all the icons that are missing from an Icon Pack.
+This script checks your installed applications and scans an icon pack folder for missing icons. With data found in the `.desktop` files that has the applications information of your system, it generates a `my_request.txt` file that contains all the icons that are missed from an icon pack.
+
+## Requirements
+
+* `git`
+* `vala`
+* `wget`
 
 ## How to use:
 
@@ -16,8 +22,7 @@ To get some icons link that I added, use the program:
 ./Main
 ```
 
-
-A **my_request** file is generated in this folder so you can create a request in the icon pack repository. You must edit this file and place the links to the application icons in line `[Icon Link]()`
+A **my_request** file is generated in this folder, so you can create a request in the icon pack repository. You must edit this file and place the links to the application icons in line `[Icon Link]()`.
 
 Example:
 
@@ -30,9 +35,7 @@ Icon=com.github.mdh34.quickdocs
 
 ## Passing optional language
 
-If you need a language other than English use the `--lang` parameter and pass your language code
-
-Example:
+If you need an icon pack's author's native language other than English, use the `--lang` parameter and pass your language code. Example:
 
 The Italian language code is `it`.
 
@@ -42,8 +45,7 @@ The Italian language code is `it`.
 
 Note that only the applications that have in the `.desktop` file data for the chosen language will have translation.
 
-
-`.desktop` files are usually stored in the following folders:
+The `.desktop` files are usually stored in the following folders:
 
 ```
 /usr/share/applications
@@ -51,6 +53,7 @@ Note that only the applications that have in the `.desktop` file data for the ch
 ~/.local/share/flaptak/app
 /var/lib/snapd/desktop/applications/
 ```
+
 ## Build
 
 ```
