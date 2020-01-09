@@ -3,60 +3,60 @@
 case "$LANG" in
     de_*)
         msg_icon_path="Gib den Pfad des Icons-Themas:"
-				msg_analysing="Zum analysieren"
-				msg_generated="Deine nachgesuchte Datei wurde korrekt generiert!"
-				msg_fail="FEHLER: Der gegebene Pfad existiert nicht."
-				msg_double_click="Bitte überprüfe neu den korrekten Pfad des Icons-Themas."
+	msg_analysing="Zum analysieren"
+	msg_generated="Deine nachgesuchte Datei wurde korrekt generiert!"
+	msg_fail="FEHLER: Der gegebene Pfad existiert nicht."
+	msg_double_click="Bitte überprüfe neu den korrekten Pfad des Icons-Themas."
         ;;
     es_*)
         msg_icon_path="Escriba la ruta del tema de iconos:"
-				msg_analysing="Analizando"
-				msg_generated="¡Su archivo solicitado se generó correctamente!"
-				msg_fail="ERROR: La ruta que usted escribió no existe."
-				msg_double_click="POr favor verifique nuevamente la ruta correcta del tema de iconos."
+	msg_analysing="Analizando"
+	msg_generated="¡Su archivo solicitado se generó correctamente!"
+	msg_fail="ERROR: La ruta que usted escribió no existe."
+	msg_double_click="POr favor verifique nuevamente la ruta correcta del tema de iconos."
         ;;
     fr_*)
         msg_icon_path="Écrivez le chemin du thème d’icônes:"
-				msg_analysing="En cours d’analyse"
-				msg_generated="Votre fichier demandé a été généré correctement !"
-				msg_fail="FAUTE : Le chemin que vous avez écrivez n’existe pas."
-				msg_double_click="S’il vous plaît, vérifiez nouvellement le chemin correct du thème d’icônes."
+	msg_analysing="En cours d’analyse"
+	msg_generated="Votre fichier demandé a été généré correctement !"
+	msg_fail="FAUTE : Le chemin que vous avez écrivez n’existe pas."
+	msg_double_click="S’il vous plaît, vérifiez nouvellement le chemin correct du thème d’icônes."
         ;;
     it_*)
         msg_icon_path="Scrive il percorso del pacchetto di icone:"
-				msg_analysing="Analizzando"
-				msg_generated="Il tuo file richiesto è stato generato correttamente!"
-				msg_fail="ERRORE: Il percorso che hai scritto non esiste."
-				msg_double_click="Per favore ricontrolla il percorso corretto del pacchetto di icone."
+	msg_analysing="Analizzando"
+	msg_generated="Il tuo file richiesto è stato generato correttamente!"
+	msg_fail="ERRORE: Il percorso che hai scritto non esiste."
+	msg_double_click="Per favore ricontrolla il percorso corretto del pacchetto di icone."
         ;;
     nl_*)
         msg_icon_path="Scrijft het pad van het pictogrammenthema:"
-				msg_analysing="Analyseren"
-				msg_generated="Uw aangevraagde bestand is correct gegenereerd!"
-				msg_fail="FOUTJE: Het pad dat u hebt geschreven bestaat niet."
-				msg_double_click="Alstublieft controleer weer het juiste pad van het pictogrammenthema."
+	msg_analysing="Analyseren"
+	msg_generated="Uw aangevraagde bestand is correct gegenereerd!"
+	msg_fail="FOUTJE: Het pad dat u hebt geschreven bestaat niet."
+	msg_double_click="Alstublieft controleer weer het juiste pad van het pictogrammenthema."
         ;;
     pt_BR*)
-        msg_icon_path="Digite o camainho do pacote de ícones:"
-				msg_analysing="Analisando"
-				msg_generated="Seu arquivo solicitado foi gerado corretamente!"
-				msg_fail="ERRO: O caminho digitado não existe."
-				msg_double_click="Por favor, verifique novamente o caminho correto do pacote de ícones."
+        msg_icon_path="Digite o caminho do pacote de ícones:"
+	msg_analysing="Analisando"
+	msg_generated="Seu arquivo solicitado foi gerado corretamente!"
+	msg_fail="ERRO: O caminho digitado não existe."
+	msg_double_click="Por favor, verifique novamente o caminho correto do pacote de ícones."
         ;;
     pt_PT*)
         msg_icon_path="Introduz o camainho do tema de ícones:"
-				msg_analysing="Analisando"
-				msg_generated="Seu ficheiro solicitado foi gerado correctamente!"
-				msg_fail="FALHA: O caminho introduzido não existe."
-				msg_double_click="Por favor, volte a verificar o caminho correcto do pacote de ícones."
+	msg_analysing="Analisando"
+	msg_generated="Seu ficheiro solicitado foi gerado correctamente!"
+	msg_fail="FALHA: O caminho introduzido não existe."
+	msg_double_click="Por favor, volte a verificar o caminho correcto do pacote de ícones."
         ;;
     *)
         # English as default
         msg_icon_path="Type icon pack path:"
-				msg_analysing="Analysing"
-				msg_generated="Your request file was generated correctly!"
-				msg_fail="ERROR: The path you typed don't exist."
-				msg_double_click="Please double-check the correct icon pack path."
+	msg_analysing="Analysing"
+	msg_generated="Your request file was generated correctly!"
+	msg_fail="ERROR: The path you typed don't exist."
+	msg_double_click="Please double-check the correct icon pack path."
         ;;
 esac
 
