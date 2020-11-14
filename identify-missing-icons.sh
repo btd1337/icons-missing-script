@@ -104,9 +104,7 @@ function printAppName() {
 				else echo
 					echo "- [ ] **$appName**  | **$appNameTranslated**" >> $dest_file
 			fi
-	fi
-
-	
+	fi	
 }
 
 if [ -d $directory_icons ]; then
